@@ -1,6 +1,6 @@
 # midterm uj
 
-A standalone 2026 U.S. Senate dashboard with five maps: current seat control, Shaurya's predictions, Shipra's predictions, Siena polling plus expected winners, and a one-button election simulator.
+A standalone 2026 U.S. Senate dashboard with five maps: current seat control, Shaurya's predictions, Shipra's predictions, Siena and CNN/SSRS polling averages plus expected winners, and a one-button election simulator.
 
 ## Run locally
 
@@ -43,7 +43,7 @@ The original ChatGPT hosting identity, Git history, credentials, and private acc
 
 The election data is an October 31, 2026 snapshot. It does not automatically refresh. Edit the `polls` and `ratings` objects in `app.js` and `candidates.json` to update it. Update the dates and methodology in `index.html` when changing the snapshot.
 
-Polls link to Siena Research Institute. Expected winners use Cook Political Report's October 30 ratings when no verified Siena poll is available. Assumptions are identified with striped shading. Tied polls remain uncalled on the polling map.
+Polls link to Siena Research Institute and CNN/SSRS. The latest verified poll from each pollster receives equal weight where both cover a state; single-poll states retain that poll. Missing candidate shares are excluded rather than treated as zero, and marked as one-poll shares. CNN/SSRS October 29 releases cover Kansas, Maine, Michigan, and Texas. Source results remain visible in the table and details. Expected winners use Cook Political Report's October 30 ratings when no verified Siena poll is available. Assumptions are identified with striped shading. Tied polls remain uncalled on the polling map.
 
 Personal predictions save in the browser's local storage. They do not sync between devices or users. Moving to a different hostname will not transfer existing predictions. The CSV export can preserve a readable copy of personal picks.
 
@@ -53,9 +53,9 @@ Press Simulate election to generate all 35 race outcomes. Click a state on map 5
 
 Use Random swing to draw a fresh nationwide margin shift, or Set party swing to enter a value from -20 to +20 margin points. Positive values favor Democrats or the modeled non-Republican challengers; negative values favor Republicans. Settings affect the next run. Each state still gets independent random variation. Personal predictions are separate from simulator outcomes.
 
-Georgia starts with Ossoff +8 and North Carolina with Cooper +12, as user-provided scenario settings. Montana models Seth Bodnar, Kurt Alme, and Alani Bankhead, with a linked Concord poll baseline normalized among those three. Alaska models Mary Peltola, incumbent Dan S. Sullivan, and Daniel J. Sullivan Jr.; the last candidate starts at an illustrative 1% for fun. These two Sullivans are distinct candidates.
+Georgia starts with Ossoff +8 and North Carolina with Cooper +12, as user-provided scenario settings. Montana models Seth Bodnar, Kurt Alme, and Alani Bankhead, using user-provided screenshot shares (Alme 30%, Bodnar 26%, Bankhead 21%) normalized among those three for simulation. The polling map preserves the raw shares; pollster and dates were not supplied. Alaska models Mary Peltola, incumbent Dan S. Sullivan, and Daniel J. Sullivan Jr.; the last candidate starts at an illustrative 1% for fun. These two Sullivans are distinct candidates.
 
-Other races use the verified Siena margin where available, or assumed margins based on ratings: Solid 20 points, Likely 10, Lean 5, and Toss-up 0. Random national variation has a standard deviation of 3 margin points and state variation 4. Three-way races also vary independent support. Displayed shares sum to 100% among modeled candidates. Independent winners count separately, with no caucus assumed.
+Other races use the verified polling-average margin where available, or assumed margins based on ratings: Solid 20 points, Likely 10, Lean 5, and Toss-up 0. Random national variation has a standard deviation of 3 margin points and state variation 4. Three-way races also vary independent support. Displayed shares sum to 100% among modeled candidates. Independent winners count separately, with no caucus assumed.
 
 This is an illustrative model, not a calibrated forecast or a Siena/Cook probability estimate. It omits ranked-choice transfers, runoffs, turnout, and stale-poll uncertainty. Full details appear in the website methodology.
 
