@@ -49,9 +49,17 @@ Personal predictions save in the browser's local storage. They do not sync betwe
 
 ## Simulator
 
-Each button press generates a new complete set of 35 race outcomes, while retaining 65 seats not on the ballot. Polled races start with the top two candidates' polling margin. Other races use assumed margins based on ratings: Solid 20 points, Likely 10, Lean 5, and Toss-up 0. The model adds a shared national normal shift (standard deviation 3 points) and an independent state normal shift (standard deviation 4 points).
+Press Simulate election to generate all 35 race outcomes. Click a state on map 5 to see its candidate shares, winning margin, party swing, and starting assumptions. The national swing and net seat changes appear above the map.
 
-This is an illustrative model, not a calibrated forecast or a Siena/Cook probability estimate. It models two contenders per race and omits ranked-choice transfers, runoffs, third-party upsets, turnout, and stale-poll uncertainty. Full details appear in the website methodology.
+Use Random swing to draw a fresh nationwide margin shift, or Set party swing to enter a value from -20 to +20 margin points. Positive values favor Democrats or the modeled non-Republican challengers; negative values favor Republicans. Settings affect the next run. Each state still gets independent random variation. Personal predictions are separate from simulator outcomes.
+
+Georgia starts with Ossoff +8 and North Carolina with Cooper +12, as user-provided scenario settings. Montana models Seth Bodnar, Kurt Alme, and Alani Bankhead, with a linked Concord poll baseline normalized among those three. Alaska models Mary Peltola, incumbent Dan S. Sullivan, and Daniel J. Sullivan Jr.; the last candidate starts at an illustrative 1% for fun. These two Sullivans are distinct candidates.
+
+Other races use the verified Siena margin where available, or assumed margins based on ratings: Solid 20 points, Likely 10, Lean 5, and Toss-up 0. Random national variation has a standard deviation of 3 margin points and state variation 4. Three-way races also vary independent support. Displayed shares sum to 100% among modeled candidates. Independent winners count separately, with no caucus assumed.
+
+This is an illustrative model, not a calibrated forecast or a Siena/Cook probability estimate. It omits ranked-choice transfers, runoffs, turnout, and stale-poll uncertainty. Full details appear in the website methodology.
+
+Change simulatorMargins and threeWayScenarios in app.js to edit the custom scenarios.
 
 ## External sources and assets
 
