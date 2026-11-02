@@ -70,3 +70,7 @@ Change simulatorMargins and threeWayScenarios in app.js to edit the custom scena
 - Optional typography: Google Fonts, DM Sans and Libre Caslon Display.
 
 Retain source attribution and check the respective providers' terms for any reuse of their materials.
+
+## Navigation
+
+The Home tab contains the original midterm uj dashboard, including its quick election simulator. The Simulator tab opens the full Senate Night simulator at `simulator/`. Both pages are served together; `navigation.css` styles their shared navigation.
