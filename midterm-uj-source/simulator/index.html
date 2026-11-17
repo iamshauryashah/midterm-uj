@@ -37,4 +37,5 @@ for(const r of races){let tr=document.createElement('tr');tr.innerHTML=`<td><b>$
 $('alignment').onchange=()=>{alignment=$('alignment').value;estimate();if(started)updateNeedle();render()};$('start').onclick=()=>{if(started&&races.every(r=>r.count===r.total))return;if(!started)prepare();running=!running;$('start').textContent=running?'Ⅱ Pause simulation':'▶ Resume simulation';render()};$('reset').onclick=reset;document.addEventListener('keydown',e=>{if(e.key==='Escape')hideTip()});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.state'))hideTip()});window.addEventListener('resize',hideTip);window.addEventListener('scroll',hideTip,{passive:true});estimate();reset();setInterval(tick,250);
 </script><script defer src="https://feedback.shauryaswebsites.com/widget.js"></script>
 <script defer src="https://navigation.shauryaswebsites.com/launcher.js"></script>
+<script defer src="https://auth.shauryaswebsites.com/widget.js"></script>
 </body></html>
